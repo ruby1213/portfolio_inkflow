@@ -34,13 +34,22 @@ export default function InkCapsule({ fluidRef }) {
     fluidRef.current?.washAway();
   }
 
+  const divider = 'w-px h-[22px] bg-capsule-border/60 mx-1 shrink-0 max-[520px]:mx-0.5';
+  const cbtn = 'flex items-center justify-center gap-1.5 h-[38px] max-[520px]:h-[34px] px-3.5 max-[520px]:px-[9px] rounded-full border-none cursor-pointer bg-transparent text-fg [font-family:inherit] text-[12px] tracking-[.03em] transition-colors duration-[250ms] whitespace-nowrap shrink-0 hover:bg-accent/[.12] [&_svg]:w-[15px] [&_svg]:h-[15px] [&_.lbl]:hidden min-[600px]:[&_.lbl]:inline';
+
   return (
-    <div className="capsule" role="toolbar" aria-label="Ink controls">
-      <div className="swatches">
+    <div
+      className="fixed left-1/2 bottom-[22px] max-[520px]:bottom-[14px] -translate-x-1/2 z-30 flex items-center gap-1.5 max-[520px]:gap-[3px] bg-capsule-bg/72 [backdrop-filter:blur(14px)_saturate(1.3)] border border-capsule-border/55 rounded-full px-2.5 max-[520px]:px-2 py-2 max-[520px]:py-[7px] shadow-[0_12px_34px_hsla(var(--shadow)/.18)] max-w-[94vw]"
+      role="toolbar"
+      aria-label="Ink controls"
+    >
+      <div className="flex gap-[7px] px-0.5">
         {SWATCHES.map(sw => (
           <button
             key={sw.idx}
-            className={`swatch${activeColor === sw.idx && !cycle ? ' active' : ''}`}
+            className={`w-[26px] h-[26px] max-[520px]:w-[23px] max-[520px]:h-[23px] rounded-full border-2 cursor-pointer relative transition-transform duration-[250ms] shrink-0 active:scale-[.92] ${
+              activeColor === sw.idx && !cycle ? 'border-fg scale-[1.14]' : 'border-transparent'
+            }`}
             style={{ background: sw.color }}
             title={sw.title}
             aria-label={sw.title}
@@ -48,17 +57,17 @@ export default function InkCapsule({ fluidRef }) {
           />
         ))}
       </div>
-      <div className="divider" />
-      <button className={`cbtn${cycle ? ' toggle-on' : ''}`} title="顏色輪替" onClick={toggleCycle}>
+      <div className={divider} />
+      <button className={`${cbtn} ${cycle ? 'bg-accent/[.18] text-accent' : ''}`} title="顏色輪替" onClick={toggleCycle}>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="M21 12a9 9 0 1 1-2.6-6.4M21 3v6h-6" /></svg>
         <span className="lbl">{t('cycleLbl')}</span>
       </button>
-      <button className={`cbtn${auto ? ' toggle-on' : ''}`} title="自動演出" onClick={toggleAuto}>
+      <button className={`${cbtn} ${auto ? 'bg-accent/[.18] text-accent' : ''}`} title="自動演出" onClick={toggleAuto}>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3.5 2" /></svg>
         <span className="lbl">{t('autoLbl')}</span>
       </button>
-      <div className="divider" />
-      <button id="washBtn" className="cbtn" title="洗い流す" onClick={wash}>
+      <div className={divider} />
+      <button className={`${cbtn} text-fg-dim hover:text-accent`} title="洗い流す" onClick={wash}>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="M7 2c-1 3-3 5-3 8a5 5 0 0 0 10 0c0-1.5-.6-2.6-1.3-3.7M12 22c4 0 7-2 7-6 0-3-2-5-3.5-7" /></svg>
         <span className="lbl">洗い流す</span>
       </button>

@@ -18,7 +18,14 @@ const FluidCanvas = forwardRef(function FluidCanvas(_props, ref) {
     washAway: () => controllerRef.current.washAway(),
   }), [controllerRef]);
 
-  return <canvas id="fluidCanvas" ref={canvasRef} aria-hidden="true" />;
+  return (
+    <canvas
+      ref={canvasRef}
+      aria-hidden="true"
+      className="fixed inset-0 w-full h-full z-[1] touch-none"
+      style={dark ? { mixBlendMode: 'screen', opacity: 0.9 } : { mixBlendMode: 'multiply' }}
+    />
+  );
 });
 
 export default FluidCanvas;

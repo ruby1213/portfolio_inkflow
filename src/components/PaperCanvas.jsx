@@ -83,5 +83,11 @@ export default function PaperCanvas() {
     return () => window.removeEventListener('resize', debounced);
   }, [dark]);
 
-  return <canvas id="paperCanvas" ref={canvasRef} aria-hidden="true" />;
+  return (
+    <canvas
+      ref={canvasRef}
+      aria-hidden="true"
+      className="fixed inset-0 w-full h-full z-0 pointer-events-none [transition:var(--transition-theme)]"
+    />
+  );
 }

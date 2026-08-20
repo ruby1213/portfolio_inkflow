@@ -16,13 +16,16 @@ export default function App() {
     <>
       <PaperCanvas />
       <FluidCanvas ref={fluidRef} />
-      <div className="grain" aria-hidden="true" />
-      <div className="vignette" aria-hidden="true" />
+      <div className="grain fixed inset-0 z-[2] pointer-events-none opacity-5 mix-blend-overlay" aria-hidden="true" />
+      <div
+        className="fixed inset-0 z-[2] pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_45%,hsla(var(--shadow)/.35)_100%)]"
+        aria-hidden="true"
+      />
 
       <TopBar />
       <NavDots />
 
-      <div className="wrap">
+      <div className="relative z-[3] pointer-events-none select-none [&_a]:pointer-events-auto [&_button]:pointer-events-auto">
         <Hero />
         <About />
         <Projects />

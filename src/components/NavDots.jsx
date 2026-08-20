@@ -25,11 +25,15 @@ export default function NavDots() {
   }, []);
 
   return (
-    <div className="nav-dots">
+    <div className="fixed right-[26px] top-1/2 -translate-y-1/2 z-20 flex flex-col gap-4 max-[720px]:hidden">
       {TARGETS.map(id => (
         <button
           key={id}
-          className={active === id ? 'active' : ''}
+          className={`w-[9px] h-[9px] rounded-full border p-0 cursor-pointer transition-all duration-300 ${
+            active === id
+              ? 'bg-accent border-accent scale-[1.3]'
+              : 'bg-transparent border-[hsla(var(--fg)/.4)]'
+          }`}
           aria-label={id}
           onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })}
         />

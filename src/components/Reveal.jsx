@@ -14,8 +14,11 @@ export default function Reveal({ as: Tag = 'div', className = '', children, ...r
     return () => io.disconnect();
   }, []);
 
+  const base = 'transition-[opacity,transform] duration-[900ms] ease';
+  const state = inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[30px]';
+
   return (
-    <Tag ref={ref} className={`reveal${inView ? ' in' : ''}${className ? ' ' + className : ''}`} {...rest}>
+    <Tag ref={ref} className={`${base} ${state}${className ? ' ' + className : ''}`} {...rest}>
       {children}
     </Tag>
   );
