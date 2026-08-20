@@ -127,7 +127,7 @@ export default function Projects() {
           {t("projTitle")}
         </Reveal>
 
-        <div className="grid grid-cols-2 gap-5.5 max-[720px]:grid-cols-1">
+        <div className="grid grid-cols-3 gap-5.5 max-[720px]:grid-cols-1">
           {PROJECTS.map((p) => (
             <Reveal
               key={p.num}
