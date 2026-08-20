@@ -51,7 +51,7 @@ export default function About() {
                   key={n}
                   className="text-[13.5px] leading-[1.7] text-fg-dim pl-4 relative"
                 >
-                  <b className="text-fg font-semibold">{t(`s${n}t`)}</b>{" "}
+                  <b className="text-accent font-semibold">{t(`s${n}t`)}</b>{" "}
                   {t(`s${n}d`)}
                 </li>
               ))}

@@ -35,7 +35,10 @@ export default function Contact() {
         </Reveal>
 
         <Reveal className="flex flex-wrap gap-3.5 justify-center mt-9.5_a]:flex [&_a]:items-center [&_a]:gap-2.5 [&_a]:px-5.5 [&_a]:py-3.5 [&_a]:rounded-full [&_a]:border [&_a]:border-card-border/60 [&_a]:bg-card-bg/55 [&_a]:text-fg [&_a]:no-underline [&_a]:text-[13.5px] [&_a]:transition-[border-color,background-color,transform] [&_a]:duration-350 [&_a]:backdrop-blur-xs [&_a:hover]:border-accent/60 [&_a:hover]:bg-accent/10 [&_a:hover]:-translate-y-0.75 [&_svg]:w-4 [&_svg]:h-4">
-          <a href="mailto:ruby_huang@gmx.ch">
+          <a
+            href="mailto:ruby_huang@gmx.ch"
+            className="flex items-center justify-center hover:text-accent"
+          >
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -47,7 +50,7 @@ export default function Contact() {
             </svg>
             ruby_huang@gmx.ch
           </a>
-          <a href="tel:+41772774227">
+          {/* <a href="tel:+41772774227">
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -57,11 +60,12 @@ export default function Contact() {
               <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.8 2Z" />
             </svg>
             +41 77 277 42 27
-          </a>
+          </a> */}
           <a
             href="https://www.linkedin.com/in/yuru-huang-tw"
             target="_blank"
             rel="noopener noreferrer"
+            className="flex items-center justify-center hover:text-accent"
           >
             <svg
               viewBox="0 0 24 24"
@@ -75,7 +79,7 @@ export default function Contact() {
             </svg>
             LinkedIn
           </a>
-          <a href="#contact" style={{ pointerEvents: "none" }}>
+          {/* <a href="#contact" style={{ pointerEvents: "none" }}>
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -85,7 +89,7 @@ export default function Contact() {
               <path d="M12 21s-7-6.2-9.3-10A5.5 5.5 0 0 1 12 5a5.5 5.5 0 0 1 9.3 6C19 14.8 12 21 12 21Z" />
             </svg>
             <span>{t("location")}</span>
-          </a>
+          </a> */}
         </Reveal>
 
         <Reveal
