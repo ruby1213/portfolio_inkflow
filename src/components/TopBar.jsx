@@ -25,7 +25,7 @@ export default function TopBar() {
         href="#hero"
         className="font-mincho font-semibold tracking-[.08em] text-[15px] text-fg no-underline opacity-85"
       >
-        結 YURU HUANG
+        <span className="text-accent">結</span> YURU HUANG
       </a>
       <div className="flex gap-2.5 items-center">
         <div className="relative" ref={menuRef}>
@@ -50,7 +50,7 @@ export default function TopBar() {
           <div
             className={`absolute top-11.5 right-0 min-w-30 bg-capsule-bg/95 backdrop-blur-[10px] border border-capsule-border/60 rounded-[14px] p-1.5 flex-col gap-0.5 shadow-[0_10px_30px_color-mix(in_srgb,var(--shadow)_20%,transparent)] ${open ? "flex" : "hidden"}`}
           >
-            {["zh", "en", "de"].map((l) => (
+            {["zh", "en"].map((l) => (
               <button
                 key={l}
                 className={`bg-transparent border-none text-left px-3 py-2 rounded-[9px] font-[inherit] text-[13px] text-fg cursor-pointer transition-colors duration-200 hover:bg-accent/15 ${lang === l ? "bg-accent/15" : ""}`}

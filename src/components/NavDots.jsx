@@ -32,7 +32,7 @@ export default function NavDots() {
   }, []);
 
   return (
-    <div className="fixed right-6.5p-1/2 -translate-y-1/2 z-20 flex flex-col gap-4 max-[720px]:hidden">
+    <div className="fixed h-full right-6.5 p-1/2 translate-y-1/2 z-20 flex flex-col gap-4 max-[720px]:hidden">
       {TARGETS.map((id) => (
         <button
           key={id}
