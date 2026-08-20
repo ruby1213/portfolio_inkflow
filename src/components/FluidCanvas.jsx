@@ -33,7 +33,7 @@ const FluidCanvas = forwardRef(function FluidCanvas(_props, ref) {
     <canvas
       ref={canvasRef}
       aria-hidden="true"
-      className="fixed inset-0 w-full h-full z-[1] touch-none"
+      className="fixed inset-0 w-full h-full z-1 touch-none"
       style={
         dark
           ? { mixBlendMode: "screen", opacity: 0.2 }

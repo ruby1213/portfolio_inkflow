@@ -17,18 +17,18 @@ export default function App() {
       <PaperCanvas />
       <FluidCanvas ref={fluidRef} />
       <div
-        className="grain fixed inset-0 z-[2] pointer-events-none opacity-5 mix-blend-overlay"
+        className="grain fixed inset-0 z-2 pointer-events-none opacity-5 mix-blend-overlay"
         aria-hidden="true"
       />
       <div
-        className="fixed inset-0 z-[2] pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_95%,color-mix(in_srgb,var(--shadow)_15%,transparent)_100%)]"
+        className="fixed inset-0 z-2 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_95%,color-mix(in_srgb,var(--shadow)_15%,transparent)_100%)]"
         aria-hidden="true"
       />
 
       <TopBar />
       <NavDots />
 
-      <div className="relative z-[3] pointer-events-none select-none [&_a]:pointer-events-auto [&_button]:pointer-events-auto">
+      <div className="relative z-3 pointer-events-none select-none [&_a]:pointer-events-auto [&_button]:pointer-events-auto">
         <Hero />
         <About />
         <Projects />

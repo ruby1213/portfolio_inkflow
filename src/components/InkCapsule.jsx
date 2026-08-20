@@ -46,15 +46,15 @@ export default function InkCapsule({ fluidRef }) {
 
   return (
     <div
-      className="fixed left-1/2 bottom-[22px] max-[520px]:bottom-[14px] -translate-x-1/2 z-30 flex items-center gap-1.5 max-[520px]:gap-[3px] bg-capsule-bg/72 [backdrop-filter:blur(14px)_saturate(1.3)] border border-capsule-border/55 rounded-full px-2.5 max-[520px]:px-2 py-2 max-[520px]:py-[7px] shadow-[0_12px_34px_color-mix(in_srgb,var(--shadow)_18%,transparent)] max-w-[94vw]"
+      className="fixed left-1/2 bottom-5.5 max-[520px]:bottom-3.5 -translate-x-1/2 z-30 flex items-center gap-1.5 max-[520px]:gap-0.75 bg-capsule-bg/72 [backdrop-filter:blur(14px)_saturate(1.3)] border border-capsule-border/55 rounded-full px-2.5 max-[520px]:px-2 py-2 max-[520px]:py-1.75 shadow-[0_12px_34px_color-mix(in_srgb,var(--shadow)_18%,transparent)] max-w-[94vw]"
       role="toolbar"
       aria-label="Ink controls"
     >
-      <div className="flex gap-[7px] px-0.5">
+      <div className="flex gap-1.75 px-0.5">
         {SWATCHES.map((sw) => (
           <button
             key={sw.idx}
-            className={`w-[26px] h-[26px] max-[520px]:w-[23px] max-[520px]:h-[23px] rounded-full border-2 cursor-pointer relative transition-transform duration-[250ms] shrink-0 active:scale-[.92] ${
+            className={`w-6.5 h-6.5 max-[520px]:w-5.75 max-[520px]:h-5.75 rounded-full border-2 cursor-pointer relative transition-transform duration-250 shrink-0 active:scale-[.92] ${
               activeColor === sw.idx && !cycle
                 ? "border-fg scale-[1.14]"
                 : "border-transparent"
@@ -66,7 +66,7 @@ export default function InkCapsule({ fluidRef }) {
           />
         ))}
       </div>
-      <div className={divider} />
+      {/* <div className={divider} /> */}
       {/* <button
         className={`${cbtn} ${cycle ? "bg-accent/[.18] text-accent" : ""}`}
         title="顏色輪替"
@@ -98,7 +98,7 @@ export default function InkCapsule({ fluidRef }) {
         </svg>
         <span className="lbl">{t("autoLbl")}</span>
       </button> */}
-      <div className={divider} />
+      {/* <div className={divider} /> */}
       <button
         className={`${cbtn} text-fg-dim hover:text-accent`}
         title="洗い流す"
