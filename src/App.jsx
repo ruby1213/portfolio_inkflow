@@ -21,6 +21,10 @@ export default function App() {
         aria-hidden="true"
       />
       <div
+        className="grain fixed inset-0 z-2 pointer-events-none opacity-5 mix-blend-overlay"
+        aria-hidden="true"
+      />
+      <div
         className="fixed inset-0 z-2 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_95%,color-mix(in_srgb,var(--shadow)_15%,transparent)_100%)]"
         aria-hidden="true"
       />

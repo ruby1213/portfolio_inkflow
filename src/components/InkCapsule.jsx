@@ -2,11 +2,6 @@ import React, { useState } from "react";
 import { useLang } from "../contexts.jsx";
 
 const SWATCHES = [
-  // { idx: 0, color: "#6E75A4", title: "藤鼠 Fujinezumi" },
-  // { idx: 1, color: "#51A8DD", title: "群青 Gunjyo" },
-  // { idx: 2, color: "#FEDFE1", title: "櫻 Sakura" },
-  // { idx: 3, color: "#FAD689", title: "淺黃 Usaki" },
-  // { idx: 3, color: "#66BAB7", title: "水淺蔥 Mizuasagi" },
   { idx: 0, color: "#1a1a1a", title: "墨 Sumi Black" },
   { idx: 1, color: "#1e3a5f", title: "藍 Indigo" },
   { idx: 2, color: "#b03a2e", title: "朱 Vermilion" },
@@ -17,7 +12,7 @@ export default function InkCapsule({ fluidRef }) {
   const { t } = useLang();
   const [activeColor, setActiveColor] = useState(0);
   const [cycle, setCycle] = useState(false);
-  const [auto, setAuto] = useState(false);
+  const [auto, setAuto] = useState(true);
 
   function pickColor(idx) {
     setActiveColor(idx);

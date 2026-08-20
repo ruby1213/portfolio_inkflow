@@ -53,7 +53,7 @@ export default function Projects() {
           {PROJECTS.map(p => (
             <Reveal
               key={p.num}
-              className="bg-card-bg/60 border border-card-border/50 rounded-[20px] p-7 backdrop-blur-[4px] transition-[transform,box-shadow,border-color] duration-[450ms] [transition-timing-function:cubic-bezier(.2,.8,.2,1)] relative overflow-hidden hover:-translate-y-[5px] hover:shadow-[0_18px_40px_color-mix(in_srgb,var(--shadow)_16%,transparent)] hover:border-accent/40 after:content-[''] after:absolute after:inset-0 after:rounded-[20px] after:pointer-events-none after:[background:radial-gradient(120px_90px_at_var(--mx,50%)_var(--my,50%),color-mix(in_srgb,var(--accent)_10%,transparent),transparent_70%)] after:opacity-0 after:transition-opacity after:duration-[400ms] hover:after:opacity-100"
+              className="bg-card-bg/60 border border-card-border/50 rounded-[20px] p-7 backdrop-blur-[4px] transition-[transform,box-shadow,border-color] duration-[450ms] [transition-timing-function:cubic-bezier(.2,.8,.2,1)] relative overflow-hidden hover:-translate-y-[5px] hover:shadow-[0_18px_40px_hsla(var(--shadow)/.16)] hover:border-accent/40 after:content-[''] after:absolute after:inset-0 after:rounded-[20px] after:pointer-events-none after:[background:radial-gradient(120px_90px_at_var(--mx,50%)_var(--my,50%),hsla(var(--accent)/.10),transparent_70%)] after:opacity-0 after:transition-opacity after:duration-[400ms] hover:after:opacity-100"
               onMouseMove={onCardMove}
             >
               <span className="font-garamond italic text-[13px] text-accent tracking-[.1em]">{p.num}</span>

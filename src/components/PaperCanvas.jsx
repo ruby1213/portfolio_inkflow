@@ -7,15 +7,11 @@ import { useTheme } from '../contexts.jsx';
 // component's effect can otherwise run before ThemeProvider's effect has
 // toggled the `dark` class onto <html>, reading stale (light-mode) values.
 const TOKENS = {
-  light: { paper: '#efe9dc', paperDeep: '#e3dac9', line: '#847362' },
-  dark: { paper: '#12151c', paperDeep: '#0c0e13', line: '#9d927b' },
+  light: { paper: '42 36% 90%', paperDeep: '38 32% 84%', line: '30 15% 45%' },
+  dark: { paper: '222 22% 9%', paperDeep: '222 24% 6%', line: '40 15% 55%' },
 };
 
-function hexAlpha(hex, alpha) {
-  const n = parseInt(hex.slice(1), 16);
-  const r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
-  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
-}
+function hsl(str, alpha) { return `hsla(${str.replace(/\s+/g, ',')}, ${alpha})`; }
 function debounce(fn, ms) { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; }
 
 export default function PaperCanvas() {
@@ -38,8 +34,8 @@ export default function PaperCanvas() {
       const lineC = tokens.line;
 
       const grad = ctx.createLinearGradient(0, 0, w, h);
-      grad.addColorStop(0, hexAlpha(base, 1));
-      grad.addColorStop(1, hexAlpha(deep, 1));
+      grad.addColorStop(0, hsl(base, 1));
+      grad.addColorStop(1, hsl(deep, 1));
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, w, h);
 
@@ -49,7 +45,7 @@ export default function PaperCanvas() {
         const len = 6 + Math.random() * 26;
         const ang = Math.random() * Math.PI;
         const x2 = x + Math.cos(ang) * len, y2 = y + Math.sin(ang) * len;
-        ctx.strokeStyle = hexAlpha(lineC, 0.035 + Math.random() * 0.045);
+        ctx.strokeStyle = hsl(lineC, 0.035 + Math.random() * 0.045);
         ctx.lineWidth = 0.4 + Math.random() * 0.8;
         ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x2, y2); ctx.stroke();
       }
@@ -59,8 +55,8 @@ export default function PaperCanvas() {
         const x = Math.random() * w, y = Math.random() * h;
         const r = 30 + Math.random() * 90;
         const rg = ctx.createRadialGradient(x, y, 0, x, y, r);
-        rg.addColorStop(0, hexAlpha(lineC, 0.025));
-        rg.addColorStop(1, hexAlpha(lineC, 0));
+        rg.addColorStop(0, hsl(lineC, 0.025));
+        rg.addColorStop(1, hsl(lineC, 0));
         ctx.fillStyle = rg;
         ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill();
       }
