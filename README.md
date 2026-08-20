@@ -49,4 +49,3 @@ src/
   context.
 - `StrictMode` is intentionally left out of `main.jsx` — its dev-only double
   effect invocation would spin up the WebGL simulation twice in a row.
-# portfolio_inkflow
