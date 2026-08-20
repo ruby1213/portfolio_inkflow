@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import { useLang } from '../contexts.jsx';
 import Reveal from './Reveal.jsx';
+import { useScrollReveal } from '../hooks/useScrollReveal.js';
 
 const PROJECTS = [
   { num: '01', titleKey: 'p1t', descKey: 'p1d', tags: ['React', 'Next.js', 'TypeScript', 'Stripe'] },
@@ -27,6 +28,7 @@ const EDUCATION = [
 
 export default function Projects() {
   const { t } = useLang();
+  const [sectionRef, inView] = useScrollReveal();
 
   const onCardMove = useCallback((e) => {
     const card = e.currentTarget;
@@ -36,7 +38,13 @@ export default function Projects() {
   }, []);
 
   return (
-    <section id="projects" className="min-h-screen w-full flex flex-col items-center justify-center px-[6vw] pt-[8vh] pb-[12vh] relative">
+    <section
+      id="projects"
+      ref={sectionRef}
+      className={`min-h-screen w-full flex flex-col items-center justify-center px-[6vw] pt-[8vh] pb-[12vh] relative transition-[opacity,transform] duration-1100 ease-out ${
+        inView ? 'opacity-100 scale-100' : 'opacity-0 scale-[.97]'
+      }`}
+    >
       <div className="max-w-[920px] w-full mx-auto">
         <Reveal as="span" className="text-[11px] tracking-[.4em] uppercase text-accent mb-[14px] block">{t('projEyebrow')}</Reveal>
         <Reveal as="h2" className="font-mincho font-semibold text-[clamp(28px,5vw,46px)] m-0 mb-10 text-ink tracking-[.02em]">{t('projTitle')}</Reveal>
@@ -72,8 +80,8 @@ export default function Projects() {
                 {item.date}<br />
                 <span style={{ opacity: 0.6 }}>{t(item.locKey)}</span>
               </div>
-              <div className="relative bg-card-border/60 before:content-[''] before:absolute before:top-1 before:-left-[3.5px] before:w-2 before:h-2 before:rounded-full before:bg-accent" />
-              <div>
+              <div className="relative bg-card-border/60 max-[640px]:col-start-2 before:content-[''] before:absolute before:top-1 before:-left-[3.5px] before:w-2 before:h-2 before:rounded-full before:bg-accent" />
+              <div className="max-[640px]:col-start-3">
                 <h4 className="m-0 mb-1 text-[15px] text-ink font-semibold">{item.companyKey ? t(item.companyKey) : item.company}</h4>
                 <span className="text-[12.5px] text-accent mb-2 block">{t(item.roleKey)}</span>
                 <p className="text-[13px] text-fg-dim leading-[1.8] m-0">{t(item.expKey)}</p>
