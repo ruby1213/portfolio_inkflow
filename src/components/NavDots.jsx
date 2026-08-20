@@ -32,7 +32,7 @@ export default function NavDots() {
           className={`w-[9px] h-[9px] rounded-full border p-0 cursor-pointer transition-all duration-300 ${
             active === id
               ? 'bg-accent border-accent scale-[1.3]'
-              : 'bg-transparent border-[hsla(var(--fg)/.4)]'
+              : 'bg-transparent border-[color-mix(in_srgb,var(--fg)_40%,transparent)]'
           }`}
           aria-label={id}
           onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })}

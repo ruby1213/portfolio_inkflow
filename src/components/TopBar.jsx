@@ -26,7 +26,7 @@ export default function TopBar() {
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18" /></svg>
           </button>
           <div
-            className={`absolute top-[46px] right-0 min-w-[120px] bg-capsule-bg/95 backdrop-blur-[10px] border border-capsule-border/60 rounded-[14px] p-1.5 flex-col gap-0.5 shadow-[0_10px_30px_hsla(var(--shadow)/.2)] ${open ? 'flex' : 'hidden'}`}
+            className={`absolute top-[46px] right-0 min-w-[120px] bg-capsule-bg/95 backdrop-blur-[10px] border border-capsule-border/60 rounded-[14px] p-1.5 flex-col gap-0.5 shadow-[0_10px_30px_color-mix(in_srgb,var(--shadow)_20%,transparent)] ${open ? 'flex' : 'hidden'}`}
           >
             {['zh', 'en', 'de'].map(l => (
               <button

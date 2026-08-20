@@ -4,7 +4,7 @@ export const I18N = {
     heroSurname: "Huang · 黃郁茹",
     heroSub: "React · TypeScript · Next.js · Flutter",
     heroTagline: "以程式碼描繪介面，如墨入宣紙，靜靜暈染出可信賴的體驗。",
-    heroHint: "點擊或拖曳，讓墨自由流動",
+    heroHint: "移動游標，讓墨自由流動",
     seal: "流墨成境",
     aboutEyebrow: "ABOUT",
     aboutTitle: "關於我",
@@ -83,7 +83,7 @@ export const I18N = {
     heroSub: "React · TypeScript · Next.js · Flutter",
     heroTagline:
       "Interfaces drawn like ink on washi paper — quiet, precise, and alive.",
-    heroHint: "Click or drag to let the ink flow",
+    heroHint: "Move your cursor to let the ink flow",
     seal: "流墨成境",
     aboutEyebrow: "ABOUT",
     aboutTitle: "About Me",
@@ -163,7 +163,7 @@ export const I18N = {
     heroSub: "React · TypeScript · Next.js · Flutter",
     heroTagline:
       "Oberflächen, gezeichnet wie Tinte auf Washi-Papier — ruhig, präzise, lebendig.",
-    heroHint: "Klicken oder ziehen, damit die Tinte fließt",
+    heroHint: "Bewegen Sie den Cursor, damit die Tinte fließt",
     seal: "流墨成境",
     aboutEyebrow: "ÜBER MICH",
     aboutTitle: "Über mich",
