@@ -134,7 +134,7 @@ export default function Projects() {
               className="bg-card-bg/60 border border-card-border/50 rounded-[20px] pb-7 px-7 pt-2 backdrop-blur-xsansition-[transform,box-shadow,border-color] duration-450 ease-[cubic-bezier(.2,.8,.2,1)] relative overflow-hidden  hover:shadow-[0_18px_40px_hsla(var(--shadow)/.16)] hover:border-accent/40 after:content-[''] after:absolute after:inset-0 after:rounded-[20px] after:pointer-events-none after:[background:radial-gradient(120px_90px_at_var(--mx,50%)_var(--my,50%),hsla(var(--accent)/.10),transparent_70%)] after:opacity-0 after:transition-opacity after:duration-400 hover:after:opacity-100"
               // onMouseMove={onCardMove}
             >
-              <div className="flex justify-between">
+              <div className="lg:flex justify-between">
                 <div className="flex">
                   <span className="font-garamond italic text-[13px] text-accent tracking-widest">
                     {p.num}
@@ -144,7 +144,7 @@ export default function Projects() {
                   </h3>
                 </div>
                 {(p.link || p.app_store || p.play_store) && (
-                  <div className="mt-4 flex flex-wrap gap-2.5 ">
+                  <div className="py-2 flex  gap-2.5 justify-end ">
                     {p.link && (
                       <ProjectLinkIcon href={p.link} ariaLabel="Website">
                         <svg

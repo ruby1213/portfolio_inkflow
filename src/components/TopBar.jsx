@@ -20,7 +20,7 @@ export default function TopBar() {
     "w-[38px] h-[38px] rounded-full bg-capsule-bg/70 backdrop-blur-[6px] border border-capsule-border/60 flex items-center justify-center cursor-pointer text-fg transition-[background-color,transform] duration-300 hover:bg-accent/15 hover:-translate-y-px [&_svg]:w-[17px] [&_svg]:h-[17px]";
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-20 flex items-center justify-between px-[5vw] py-5.5 pointer-events-none *:pointer-events-auto ">
+    <div className="fixed top-0 left-0 right-0 z-20 flex items-center justify-between px-[5vw] py-5.5 pointer-events-none *:pointer-events-auto backdrop-blur-md ">
       <a
         href="#hero"
         className="font-mincho font-semibold tracking-[.08em] text-[15px] text-fg no-underline opacity-85"
